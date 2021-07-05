@@ -1,22 +1,25 @@
-package com.company.entity;
+/**
+ * 
+ */
+package com.company.model;
+
+import java.io.Serializable;
+import java.math.BigInteger;
 
 /**
- * @author User
+ * @author Alisha Raju
  *
  */
-public class Company {
+public class CompanyResponse implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private String companyCode;
-
 	private String companyName;
-
 	private String companyCEO;
-
-	private String companyTurnOver;
-
+	private BigInteger companyTurnOver;
+	private String currencyCode;
 	private String companyUrl;
-
-	private String listing;
+	private String stockExchange;
 
 	/**
 	 * @return the comapnyCode
@@ -61,24 +64,38 @@ public class Company {
 	}
 
 	/**
+	 * @return the companyUrl
+	 */
+	public String getCompanyUrl() {
+		return companyUrl;
+	}
+
+	/**
 	 * @return the companyTurnOver
 	 */
-	public String getCompanyTurnOver() {
+	public BigInteger getCompanyTurnOver() {
 		return companyTurnOver;
 	}
 
 	/**
 	 * @param companyTurnOver the companyTurnOver to set
 	 */
-	public void setCompanyTurnOver(String companyTurnOver) {
+	public void setCompanyTurnOver(BigInteger companyTurnOver) {
 		this.companyTurnOver = companyTurnOver;
 	}
 
 	/**
-	 * @return the companyUrl
+	 * @return the currencyCode
 	 */
-	public String getCompanyUrl() {
-		return companyUrl;
+	public String getCurrencyCode() {
+		return currencyCode;
+	}
+
+	/**
+	 * @param currencyCode the currencyCode to set
+	 */
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
 	}
 
 	/**
@@ -89,23 +106,17 @@ public class Company {
 	}
 
 	/**
-	 * @return the listing
+	 * @return the stockExchange
 	 */
-	public String getListing() {
-		return listing;
+	public String getStockExchange() {
+		return stockExchange;
 	}
 
 	/**
-	 * @param listing the listing to set
+	 * @param stockExchange the stockExchange to set
 	 */
-	public void setListing(String listing) {
-		this.listing = listing;
-	}
-
-	@Override
-	public String toString() {
-		return "Company [companyCode=" + companyCode + ", companyName=" + companyName + ", companyCEO=" + companyCEO
-				+ ", companyTurnOver=" + companyTurnOver + ", companyUrl=" + companyUrl + ", listing=" + listing + "]";
+	public void setStockExchange(String stockExchange) {
+		this.stockExchange = stockExchange;
 	}
 
 }

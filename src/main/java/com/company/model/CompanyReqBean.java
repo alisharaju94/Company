@@ -1,27 +1,32 @@
 package com.company.model;
 
-public class CompanyReqBean {
+import java.io.Serializable;
+import java.math.BigInteger;
 
-	private String companyCode;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel
+public class CompanyReqBean implements Serializable {
+
+	private static final long serialVersionUID = 8027252568089995952L;
+
+	@ApiModelProperty(notes = "The company name", example = "XYZ")
 	private String companyName;
+	@ApiModelProperty(notes = "Company CEO name", example = "Marc Alderson")
 	private String companyCEO;
-	private String companyTurnOver;
+
+	@ApiModelProperty(notes = "The company trun over. Minimum value should be 10 Cr.", example = "100000000")
+	private BigInteger companyTurnOver;
+
+	@ApiModelProperty(notes = "Currency code. This should be a 3 letter code.", example = "INR")
+	private String currencyCode;
+
+	@ApiModelProperty(notes = "The company url", example = "www.xyz.com")
 	private String companyUrl;
-	private String listing;
 
-	/**
-	 * @return the comapnyCode
-	 */
-	public String getCompanyCode() {
-		return companyCode;
-	}
-
-	/**
-	 * @param comapnyCode the comapnyCode to set
-	 */
-	public void setCompanyCode(String companyCode) {
-		this.companyCode = companyCode;
-	}
+	@ApiModelProperty(notes = "The stock exchange in which the company is listed in", example = "NSE")
+	private String stockExchange;
 
 	/**
 	 * @return the companyName
@@ -52,24 +57,38 @@ public class CompanyReqBean {
 	}
 
 	/**
+	 * @return the companyUrl
+	 */
+	public String getCompanyUrl() {
+		return companyUrl;
+	}
+
+	/**
 	 * @return the companyTurnOver
 	 */
-	public String getCompanyTurnOver() {
+	public BigInteger getCompanyTurnOver() {
 		return companyTurnOver;
 	}
 
 	/**
 	 * @param companyTurnOver the companyTurnOver to set
 	 */
-	public void setCompanyTurnOver(String companyTurnOver) {
+	public void setCompanyTurnOver(BigInteger companyTurnOver) {
 		this.companyTurnOver = companyTurnOver;
 	}
 
 	/**
-	 * @return the companyUrl
+	 * @return the currencyCode
 	 */
-	public String getCompanyUrl() {
-		return companyUrl;
+	public String getCurrencyCode() {
+		return currencyCode;
+	}
+
+	/**
+	 * @param currencyCode the currencyCode to set
+	 */
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
 	}
 
 	/**
@@ -80,17 +99,17 @@ public class CompanyReqBean {
 	}
 
 	/**
-	 * @return the listing
+	 * @return the stockExchange
 	 */
-	public String getListing() {
-		return listing;
+	public String getStockExchange() {
+		return stockExchange;
 	}
 
 	/**
-	 * @param listing the listing to set
+	 * @param stockExchange the stockExchange to set
 	 */
-	public void setListing(String listing) {
-		this.listing = listing;
+	public void setStockExchange(String stockExchange) {
+		this.stockExchange = stockExchange;
 	}
 
 }

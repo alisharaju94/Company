@@ -1,8 +1,9 @@
 package com.company.service.intf;
 
 import com.company.model.CompanyReqBean;
+import com.company.model.CompanyResponse;
 
 public interface CompanyService {
 
-	void addCompany(CompanyReqBean company);
+	CompanyResponse addCompany(CompanyReqBean company);
 }

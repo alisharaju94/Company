@@ -25,11 +25,8 @@ public class SwaggerConfiguration {
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfo("Company API",
-				"API's for company service",
-				"0.0.1-SNAPSHOT", "Free to use",
-				new Contact("Alisha Raju", null, "Alisha.Raju@cognizant.com"),
-				null, null, Collections.emptyList());
+		return new ApiInfo("Company API", "API's for company service", "0.0.1-SNAPSHOT", "Free to use",
+				new Contact("Alisha Raju", null, "Alisha.Raju@cognizant.com"), null, null, Collections.emptyList());
 
 	}
 }
