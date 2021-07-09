@@ -1,111 +1,157 @@
 package com.company.entity;
 
+import java.io.Serializable;
+import java.math.BigInteger;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedStoredProcedureQuery;
+import javax.persistence.ParameterMode;
+import javax.persistence.StoredProcedureParameter;
+import javax.persistence.Table;
+
+import springfox.documentation.spring.web.json.Json;
+
 /**
- * @author User
+ * @author Alisha
  *
  */
-public class Company {
+@Entity(name = "Company")
+@Table(name = "company")
+@NamedStoredProcedureQuery(
+		name = "Company.insertCompanyQuery", procedureName = "insert_company", resultClasses = {Company.class},
+		parameters = {
+		@StoredProcedureParameter(mode = ParameterMode.IN, type = String.class, name = "c_name"),
+		@StoredProcedureParameter(mode = ParameterMode.IN, type = String.class, name = "c_CEO"),
+		@StoredProcedureParameter(mode = ParameterMode.IN, type = BigInteger.class, name = "c_turn_over"),
+		@StoredProcedureParameter(mode = ParameterMode.IN, type = String.class, name = "c_currency"),
+		@StoredProcedureParameter(mode = ParameterMode.IN, type = String.class, name = "c_url"),
+		@StoredProcedureParameter(mode = ParameterMode.IN, type = String.class, name = "c_stock_exchange") })
+public class Company implements Serializable{
 
-	private String companyCode;
+	private static final long serialVersionUID = 1L;
 
-	private String companyName;
+	@Id
+	@Column(name = "code", nullable = false)
+	private long code;
 
-	private String companyCEO;
+	@Column(name = "name", nullable = false)
+	private String name;
 
-	private String companyTurnOver;
+	@Column(name = "CEO", nullable = false)
+	private String ceo;
 
-	private String companyUrl;
+	@Column(name = "turn_over", nullable = false)
+	private BigInteger turnOver;
 
-	private String listing;
+	@Column(name = "currency_code", nullable = false)
+	private String currencyCode;
+
+	@Column(name = "url", nullable = false)
+	private String url;
+
+	@Column(name = "stock_exchange", nullable = false)
+	private String stockExchange;
 
 	/**
-	 * @return the comapnyCode
+	 * @return the code
 	 */
-	public String getCompanyCode() {
-		return companyCode;
+	public long getCode() {
+		return code;
 	}
 
 	/**
-	 * @param comapnyCode the comapnyCode to set
+	 * @param code the code to set
 	 */
-	public void setCompanyCode(String companyCode) {
-		this.companyCode = companyCode;
+	public void setCode(long code) {
+		this.code = code;
 	}
 
 	/**
-	 * @return the companyName
+	 * @return the name
 	 */
-	public String getCompanyName() {
-		return companyName;
+	public String getName() {
+		return name;
 	}
 
 	/**
-	 * @param companyName the companyName to set
+	 * @param name the name to set
 	 */
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	/**
-	 * @return the companyCEO
+	 * @return the ceo
 	 */
-	public String getCompanyCEO() {
-		return companyCEO;
+	public String getCeo() {
+		return ceo;
 	}
 
 	/**
-	 * @param companyCEO the companyCEO to set
+	 * @param ceo the ceo to set
 	 */
-	public void setCompanyCEO(String companyCEO) {
-		this.companyCEO = companyCEO;
+	public void setCeo(String ceo) {
+		this.ceo = ceo;
 	}
 
 	/**
-	 * @return the companyTurnOver
+	 * @return the turnOver
 	 */
-	public String getCompanyTurnOver() {
-		return companyTurnOver;
+	public BigInteger getTurnOver() {
+		return turnOver;
 	}
 
 	/**
-	 * @param companyTurnOver the companyTurnOver to set
+	 * @param turnOver the turnOver to set
 	 */
-	public void setCompanyTurnOver(String companyTurnOver) {
-		this.companyTurnOver = companyTurnOver;
+	public void setTurnOver(BigInteger turnOver) {
+		this.turnOver = turnOver;
 	}
 
 	/**
-	 * @return the companyUrl
+	 * @return the currencyCode
 	 */
-	public String getCompanyUrl() {
-		return companyUrl;
+	public String getCurrencyCode() {
+		return currencyCode;
 	}
 
 	/**
-	 * @param companyUrl the companyUrl to set
+	 * @param currencyCode the currencyCode to set
 	 */
-	public void setCompanyUrl(String companyUrl) {
-		this.companyUrl = companyUrl;
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
 	}
 
 	/**
-	 * @return the listing
+	 * @return the url
 	 */
-	public String getListing() {
-		return listing;
+	public String getUrl() {
+		return url;
 	}
 
 	/**
-	 * @param listing the listing to set
+	 * @param url the url to set
 	 */
-	public void setListing(String listing) {
-		this.listing = listing;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
-	@Override
-	public String toString() {
-		return "Company [companyCode=" + companyCode + ", companyName=" + companyName + ", companyCEO=" + companyCEO
-				+ ", companyTurnOver=" + companyTurnOver + ", companyUrl=" + companyUrl + ", listing=" + listing + "]";
+	/**
+	 * @return the stockExchange
+	 */
+	public String getStockExchange() {
+		return stockExchange;
+	}
+
+	/**
+	 * @param stockExchange the stockExchange to set
+	 */
+	public void setStockExchange(String stockExchange) {
+		this.stockExchange = stockExchange;
 	}
 
 }

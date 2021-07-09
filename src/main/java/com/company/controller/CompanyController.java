@@ -22,8 +22,8 @@ public class CompanyController {
 
 	@PostMapping(value = "/add")
 	@ApiOperation(value = "Register a company", notes = "Endpoint to register a company", response = CompanyResponse.class)
-	public CompanyResponse addCompany(@ApiParam(value = "stockMarketRequest", required = true) @RequestBody CompanyReqBean company){
+	public CompanyResponse addCompany(@ApiParam(value = "companyRequest", required = true) @RequestBody CompanyReqBean company){
 		return companyService.addCompany(company);
 	}
-	
+
 }

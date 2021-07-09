@@ -5,14 +5,20 @@ import java.math.BigInteger;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 @ApiModel
+@Data
 public class CompanyReqBean implements Serializable {
 
 	private static final long serialVersionUID = 8027252568089995952L;
+	
+	@ApiModelProperty(notes = "The company code", example = "1")
+	private String companyCode;
 
 	@ApiModelProperty(notes = "The company name", example = "XYZ")
 	private String companyName;
+
 	@ApiModelProperty(notes = "Company CEO name", example = "Marc Alderson")
 	private String companyCEO;
 
@@ -27,89 +33,5 @@ public class CompanyReqBean implements Serializable {
 
 	@ApiModelProperty(notes = "The stock exchange in which the company is listed in", example = "NSE")
 	private String stockExchange;
-
-	/**
-	 * @return the companyName
-	 */
-	public String getCompanyName() {
-		return companyName;
-	}
-
-	/**
-	 * @param companyName the companyName to set
-	 */
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
-	}
-
-	/**
-	 * @return the companyCEO
-	 */
-	public String getCompanyCEO() {
-		return companyCEO;
-	}
-
-	/**
-	 * @param companyCEO the companyCEO to set
-	 */
-	public void setCompanyCEO(String companyCEO) {
-		this.companyCEO = companyCEO;
-	}
-
-	/**
-	 * @return the companyUrl
-	 */
-	public String getCompanyUrl() {
-		return companyUrl;
-	}
-
-	/**
-	 * @return the companyTurnOver
-	 */
-	public BigInteger getCompanyTurnOver() {
-		return companyTurnOver;
-	}
-
-	/**
-	 * @param companyTurnOver the companyTurnOver to set
-	 */
-	public void setCompanyTurnOver(BigInteger companyTurnOver) {
-		this.companyTurnOver = companyTurnOver;
-	}
-
-	/**
-	 * @return the currencyCode
-	 */
-	public String getCurrencyCode() {
-		return currencyCode;
-	}
-
-	/**
-	 * @param currencyCode the currencyCode to set
-	 */
-	public void setCurrencyCode(String currencyCode) {
-		this.currencyCode = currencyCode;
-	}
-
-	/**
-	 * @param companyUrl the companyUrl to set
-	 */
-	public void setCompanyUrl(String companyUrl) {
-		this.companyUrl = companyUrl;
-	}
-
-	/**
-	 * @return the stockExchange
-	 */
-	public String getStockExchange() {
-		return stockExchange;
-	}
-
-	/**
-	 * @param stockExchange the stockExchange to set
-	 */
-	public void setStockExchange(String stockExchange) {
-		this.stockExchange = stockExchange;
-	}
 
 }
