@@ -3,6 +3,10 @@
  */
 package com.company.mapper;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.util.Random;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
@@ -23,6 +27,23 @@ public class DataMapper {
 			return companyResponse;
 		}
 		return null;
+	}
+
+	public void setComCode(Company entity) {
+		try {
+			String comCode = getRandomID(entity.getName().hashCode());
+			entity.setCode(comCode);
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+			throw new IllegalStateException();
+		}
+	}
+
+	private static String getRandomID(int seed) throws NoSuchAlgorithmException {
+		Random random = SecureRandom.getInstanceStrong();
+		random.setSeed(seed);
+		int randomNum = random.nextInt(999999);
+		return new StringBuilder().append("C_").append(String.format("%06d", randomNum)).toString();
 	}
 
 }

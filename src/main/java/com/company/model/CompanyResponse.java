@@ -13,7 +13,7 @@ import lombok.Data;
  */
 @Data
 public class CompanyResponse{
-	private long code;
+	private String code;
 	private String name;
 	private String ceo;
 	private BigInteger turnOver;
