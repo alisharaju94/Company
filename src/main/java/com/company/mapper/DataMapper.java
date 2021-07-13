@@ -32,7 +32,7 @@ public class DataMapper {
 	public void setComCode(Company entity) {
 		try {
 			String comCode = getRandomID(entity.getName().hashCode());
-			entity.setCode(comCode);
+			entity.setComCode(comCode);
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 			throw new IllegalStateException();

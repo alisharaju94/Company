@@ -27,7 +27,7 @@ public class CompanySPActionsRepoImpl implements CompanySPActionsRepository{
 	public CompanyResponse insertCompany(Company company) {
 		mapper.setComCode(company);
  		StoredProcedureQuery query = entityManager.createNamedStoredProcedureQuery("Company.insertCompanyQuery");
- 		query.setParameter("c_code", company.getCode());
+ 		query.setParameter("c_code", company.getComCode());
 		query.setParameter("c_name", company.getName());
 		query.setParameter("c_CEO", company.getCeo());
 		query.setParameter("c_turn_over", company.getTurnOver());

@@ -38,8 +38,8 @@ public class Company implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name = "code", nullable = false)
-	private String code;
+	@Column(name = "com_code", nullable = false)
+	private String comCode;
 
 	@Column(name = "name", nullable = false)
 	private String name;

@@ -41,7 +41,7 @@ public class CompanyServiceImpl implements CompanyService {
 		List<CompanyResponse> companyList = Lists.newArrayList();
 		companyEntities.forEach(entity -> {
 			CompanyResponse comResponse = new CompanyResponse();
-			comResponse.setCode(entity.getCode());
+			comResponse.setComCode(entity.getComCode());
 			comResponse.setName(entity.getName());
 			comResponse.setCeo(entity.getCeo());
 			comResponse.setTurnOver(entity.getTurnOver());
