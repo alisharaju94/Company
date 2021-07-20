@@ -5,7 +5,7 @@ server:
 ## Spring DATASOURCE
 spring:
  datasource:
-  url: jdbc:mysql://localhost:3306/stockmarket   
+  url: jdbc:mysql://e-stockmarket.cluster-cbb527yjemxm.ap-south-1.rds.amazonaws.com:3306/stockmarket   
   username: admin
   password: adminuser
 #Hibernate
