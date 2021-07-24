@@ -15,3 +15,15 @@ spring:
     dialect: org.hibernate.dialect.MySQL5InnoDBDialect
   hibernate:
    ddl-auto: update
+
+management:
+ endpoint:
+  prometheus:
+   enabled: true
+ endpoints:
+  web:
+   cors:
+    allowed-origins: "*"
+    allowed-methods: "GET,POST,DELETE, OPTIONS"
+   exposure:
+    include: "health, info, beans, prometheus"
