@@ -6,8 +6,6 @@ import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedStoredProcedureQuery;
 import javax.persistence.ParameterMode;
@@ -15,7 +13,6 @@ import javax.persistence.StoredProcedureParameter;
 import javax.persistence.Table;
 
 import lombok.Data;
-import springfox.documentation.spring.web.json.Json;
 
 /**
  * @author Alisha

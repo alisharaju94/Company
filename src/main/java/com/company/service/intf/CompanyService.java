@@ -11,4 +11,6 @@ public interface CompanyService {
 	CompanyList getAll();
 
 	void delete(String companyCode);
+
+	CompanyResponse getInfo(String companyCode);
 }

@@ -37,6 +37,11 @@ public class CompanyController {
 		return companyService.getAll();
 	}
 	
+	@GetMapping(value = "/info/{companyCode}")
+	public CompanyResponse getInfo(@PathVariable String companyCode) {
+		return companyService.getInfo(companyCode);
+	}
+	
 	@DeleteMapping(value ="/{companyCode}")
 	public ResponseEntity deleteCompany(@PathVariable String companyCode) {
 		 companyService.delete(companyCode);

@@ -1,7 +1,9 @@
 package com.company.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,9 +21,10 @@ public class CompanyServiceImpl implements CompanyService {
 
 	@Autowired
 	CompanySPActionsRepository companySPActionsRepo;
-	
+
 	@Autowired
 	private CompanyRepository companyCommonActionsRepo;
+
 	@Override
 	public CompanyResponse addCompany(CompanyReqBean companyReqBean) {
 		Company company = new Company();
@@ -57,5 +60,17 @@ public class CompanyServiceImpl implements CompanyService {
 	@Override
 	public void delete(String companyCode) {
 		companyCommonActionsRepo.deleteById(companyCode);
+	}
+
+	@Override
+	public CompanyResponse getInfo(String companyCode) {
+		Optional<Company> result = companyCommonActionsRepo.findById(companyCode);
+		if (result.isPresent()) {
+			Company company = result.get();
+			CompanyResponse response = new CompanyResponse();
+			BeanUtils.copyProperties(company, response);
+			return response;
+		}
+		return null;
 	}
 }
